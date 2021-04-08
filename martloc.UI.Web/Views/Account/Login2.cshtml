@@ -1,0 +1,134 @@
+﻿@page
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Financeiro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="icon" type="image/png" href="~/images/login/icons/favicon.ico" />
+
+
+
+    <link href="~/vendors/login/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+
+    <link href="~/fonts/login/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" type="text/css" href="~/vendors/login/animate/animate.css">
+
+
+    <link rel="stylesheet" type="text/css" href="~/vendors/login/css-hamburgers/hamburgers.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/vendors/login/select2/select2.min.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/login/util.css">
+
+    <link rel="stylesheet" type="text/css" href="~/css/login/main.css">
+
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="~/images/login/img-01.png" alt="IMG">
+                </div>
+
+                <form class="login100-form validate-form" method="post">
+                    @*<div asp-validation-summary="All" class="text-danger"></div>*@
+
+                    @*<span asp-validation-for="c" class="text-danger"></span>*@
+
+
+                    <span class="login100-form-title">
+                        Entrar
+                    </span>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" value="@ViewBag.Email" placeholder="E-mail">
+
+
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+
+
+                    </div>
+                    @*<span asp-validation-for="Input.Email" class="text-danger"></span>*@
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Senha">
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+
+                    </div>
+                    @Html.ValidationMessage("erro", "", new { @class = "text-danger" })
+                    @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
+
+
+
+
+                    <div class="container-login100-form-btn">
+
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Esqueceu
+                        </span>
+                        <a class="txt2" href="#">
+                            login/senha?
+                        </a>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="/Account/Register">
+                            Ir para Cadastro
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="~/vendors/login/jquery/jquery-3.2.1.min.js"></script>
+
+    <script src="~/vendors/login/bootstrap/js/popper.js"></script>
+    <script src="~/vendors/login/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/vendors/login/select2/select2.min.js"></script>
+
+    <script src="~/vendors/login/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+
+    <script src="~/js/login/main.js"></script>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

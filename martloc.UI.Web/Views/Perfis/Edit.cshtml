@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewData["Title"] = "Perfils";
+}
+
+@model IEnumerable<martloc.UI.Web.Models.TelaViewModel> ;
+<sectsion class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>perfil de acesso</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Locações > Nova</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</sectsion>
+
+<section class="content">
+    <div class="row">
+        <div class="col-sm-3"></div>
+
+
+
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Permissões</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+
+                <div class="card-body">
+                  <input type="hidden" value="@ViewBag.RoleId" id="RoleId" />
+                    <div class="form-group">
+                        <label>Perfil</label>
+                      <input type="text" value="@ViewBag.RoleName" name="" id="nomePerfil" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telas</label>
+                        <form role="form" method="get" action="GetAcoes">
+                            <select name="tela" id="tela" class="form-control">
+                                <option value="">Selecione</option>
+                                @foreach (var item in Model)
+                                {
+
+                                    <option value="@item.Nome">@item.Nome</option>
+
+                                }
+
+
+                            </select>
+                        </form>
+                    </div>
+
+                    <div id="_acoes" style="
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+
+">
+
+                    </div>
+
+
+
+                </div>
+             
+
+                <div class="card-footer">
+                    <button type="button" id="enviar" class="btn btn-primary">Salvar</button>
+                </div>
+
+            </div>
+
+            <!-- /.card -->
+
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</section>
+@section scripts {
+
+    <script>
+
+        var buttonLoading = {
+            start: function (button) {
+
+
+        $(button).html('Salvando... <i class="ld ld-ring ld-spin"></i>')
+        $(button).attr('disabled', 'disabled');
+
+    },
+            stop: function (button) {
+
+        $(button).html('Salvar')
+        $(button).removeAttr('disabled');
+
+    }
+}
+
+            const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+            });
+
+
+        $(document).ready(function () {
+
+            $('#tela').on('change', function (e) {
+                console.log($('#tela').val())
+
+                $.get('/Perfis/GetAcoes',{ tela: $('#tela').val(), RoleId: $('#RoleId').val() }, function (eX) {
+
+                    
+                    $('#_acoes').html(eX)
+               
+
+                });
+
+
+            })
+
+            $('#enviar').on('click', function () {
+                       var button = $('#enviar');
+                         buttonLoading.start(button);
+                        var array = []; 
+                        $("input:checkbox[name=acoes]:checked").each(function() { 
+                            array.push($('#tela').val()+'.'+$(this).val()); 
+                        });
+
+                        $.post('/Perfis/Edit', { Id:$('#RoleId').val(), Nome:$('#nomePerfil').val(), Claims: array }, function (res) {
+
+                                  Toast.fire({
+                        type: 'success',
+                        title: 'Perfil atualizado com sucesso!'
+                                  })
+                            buttonLoading.stop(button);
+
+                            console.log(res);
+
+                });
+
+
+                                    console.log('array',array)
+        }); 
+
+
+
+
+
+
+        })
+
+
+    </script>
+
+}

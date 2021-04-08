@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+
+}
+@model List<string>
+    <div class="form-group">
+        <label>Ações</label>
+        <div class="form-check">
+            <input class="form-check-input" id="checkAll" type="checkbox">
+            <label class="form-check-label">Todos</label>
+        </div>
+
+        @foreach (var item in Model)
+        {
+
+
+            var d = (List<string>)@ViewBag.acoesSelecionadas;
+            string chk = d.Contains(@ViewBag.telaSelecionada+"."+item )==true?"checked='checked'":"";
+
+        <div class="form-check">
+            <input class="form-check-input" name="acoes" id="_cbx+@item" value="@item"  @Html.Raw(chk)    type="checkbox">
+            <label class="form-check-label" for="_cbx+@item">@item</label>
+        </div>
+        }
+
+    </div>
+<script>
+                                                    $("#checkAll").on('click',function () {
+             
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
+
+
+</script>

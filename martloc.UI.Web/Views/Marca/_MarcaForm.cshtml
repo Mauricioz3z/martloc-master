@@ -1,0 +1,47 @@
+﻿
+<div class="modal-body">
+
+    <form method="post" name="fmarca" id="fmarca">
+        <input type="hidden" id="Id" name="Id">
+        <div class="row">
+
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="form-group">
+                    <label for="descricao">Status</label>
+                    <select class="form-control" id="status">
+                        <option value="1">Ativo</option>
+                        <option value="0">Inativo</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+        @*<div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">Stus</h3>
+            </div>
+            <div class="card-body">
+
+            </div>
+        </div>*@
+
+
+    <div class="float-left">
+
+        <button type="button" id="btnSalvar" class="btn btn-primary">Salvar
+            <i class="ld ld-ring ld-spin d-none"></i>
+        </button>
+        <button type="button" id="btnSalvarContinuar" class="btn  btn-outline-primary">Salvar & Continuar  <i class="ld ld-ring ld-spin  d-none"></i> </button>
+    </div>
+    </form>
+</div>

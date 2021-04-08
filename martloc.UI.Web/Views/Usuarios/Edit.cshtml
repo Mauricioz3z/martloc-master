@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+@model financeiro.UI.Web.Models.UsuarioViewModel
+<h1>Edit</h1>
+
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">nome</label>
+        <input type="email" class="form-control" value="@Model.Nome" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

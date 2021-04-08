@@ -1,0 +1,149 @@
+﻿
+
+<div class="modal-body">
+
+    <form method="post" name="fpessoa" id="fpessoa">
+        <input type="hidden" id="Id" name="Id">
+        <div class="row">
+
+            <div class="col-2">
+                <div class="form-group">
+                    <label for="descricao">Tipo Pessoa</label>
+
+                    <select class="form-control" id="TipoPessoa">
+                        <option value="0">Fisica</option>
+                        <option value="1">Juridíca</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="descricao">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="descricao">Fone</label>
+                    <input type="text" class="form-control" id="fone" name="fone" placeholder="Fone">
+                </div>
+            </div>
+
+
+
+          
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="fisica" class="row">
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">CPF</label>
+                    <input type="text" class="form-control" id="Cpf" name="Cpf" placeholder="CPF">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">RG:</label>
+                    <input type="text" class="form-control" id="Rg" name="Rg" placeholder="RG">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Apelido</label>
+                    <input type="text" class="form-control" id="Apelido" name="Apelido" placeholder="Apelido">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">DataNascimento</label>
+                    <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" placeholder="Data De Nascimento">
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div id="juridica" class="row  d-none">
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">CNPJ</label>
+                    <input type="text" class="form-control" id="Cnpj" name="Cnpj" placeholder="CNPJ">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Nome Fantasia</label>
+                    <input type="text" class="form-control" id="NomeFantasia" name="NomeFantasia" placeholder="NomeFantasia">
+                </div>
+            </div>
+
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Inscricao Municipal</label>
+                    <input type="text" class="form-control" id="InscricaoMunicipal" name="InscricaoMunicipal" placeholder="Inscricão Municipal">
+                </div>
+            </div>
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Inscricao Estadual</label>
+                    <input type="text" class="form-control" id="InscricaoEstadual" name="InscricaoEstadual" placeholder="Inscricão Estadual">
+                </div>
+            </div>
+
+           
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Data Fundação</label>
+                    <input type="text" class="form-control" id="DataFundacao" name="DataFundacao" placeholder="Data Fundação">
+                </div>
+            </div>
+
+        </div>
+
+
+        
+
+        
+        
+        
+
+
+
+
+        <div class="float-left">
+
+            <button type="button" id="btnSalvar" class="btn btn-primary">
+                Salvar
+                <i class="ld ld-ring ld-spin d-none"></i>
+            </button>
+            <button type="button" id="btnSalvarContinuar" class="btn  btn-outline-primary">Salvar & Continuar  <i class="ld ld-ring ld-spin  d-none"></i> </button>
+        </div>
+    </form>
+</div>
